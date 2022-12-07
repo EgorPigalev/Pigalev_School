@@ -30,15 +30,15 @@
                 <TextBlock Text="Описание " Style="{StaticResource ResourceKey=tbSearchRight}"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <TextBox Name="tbSearchName" Style="{StaticResource ResourceKey=tbSearchLeft}"/>
-                <TextBox Name="tbSearchDescription" Style="{StaticResource ResourceKey=tbSearchLeft}"/>
+                <TextBox Name="tbSearchName" Style="{StaticResource ResourceKey=tbSearchLeft}" SelectionChanged="tbSearchName_SelectionChanged"/>
+                <TextBox Name="tbSearchDescription" Style="{StaticResource ResourceKey=tbSearchLeft}" SelectionChanged="tbSearchName_SelectionChanged"/>
             </StackPanel>
             <StackPanel Grid.Column="2">
                 <TextBlock Text="Размер скидки " Margin="5, 10, 5, 5" Style="{StaticResource ResourceKey=tbSearchRight}"/>
                 <TextBlock Text="Сортировка " Margin="5, 10, 5, 5" Style="{StaticResource ResourceKey=tbSearchRight}"/>
             </StackPanel>
             <StackPanel Grid.Column="3">
-                <ComboBox Name="cbDiscount" Style="{StaticResource ResourceKey=cbSearchAndSort}">
+                <ComboBox Name="cbDiscount" Style="{StaticResource ResourceKey=cbSearchAndSort}" SelectionChanged="cbDiscount_SelectionChanged">
                     <ComboBoxItem>все</ComboBoxItem>
                     <ComboBoxItem>от 0% до 5%</ComboBoxItem>
                     <ComboBoxItem>от 5% до 15%</ComboBoxItem>
@@ -46,7 +46,7 @@
                     <ComboBoxItem>от 30% до 70%</ComboBoxItem>
                     <ComboBoxItem>от 70% до 100%</ComboBoxItem>
                 </ComboBox>
-                <ComboBox Name="cbSorting" Style="{StaticResource ResourceKey=cbSearchAndSort}">
+                <ComboBox Name="cbSorting" Style="{StaticResource ResourceKey=cbSearchAndSort}" SelectionChanged="cbDiscount_SelectionChanged">
                     <ComboBoxItem>Без сортировки</ComboBoxItem>
                     <ComboBoxItem>По возрастанию стоимости услуг</ComboBoxItem>
                     <ComboBoxItem>По убыванию стоимости услуг</ComboBoxItem>
