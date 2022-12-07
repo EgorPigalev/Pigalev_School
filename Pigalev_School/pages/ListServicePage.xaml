@@ -4,11 +4,35 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pigalev_School"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ListServicePage">
-
+      mc:Ignorable="d" Background="White"
+      d:DesignHeight="650" d:DesignWidth="1200"
+      Title="ListServicePage" FontSize="24">
+    <Page.Resources>
+        <BitmapImage x:Key="defaultImage" UriSource="../resources/picture.png"/>
+    </Page.Resources>
     <Grid>
-        
+        <ListView x:Name="lvListService" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="#445c93">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="4*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Height="200" Width="200" Source="{Binding MainImagePath, TargetNullValue={StaticResource defaultImage}}" Grid.Column="0"/>
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Text="{Binding Title}" Margin="10" TextWrapping="Wrap" TextAlignment="Center"/>
+                                <StackPanel Orientation="Horizontal" Margin="10">
+                                    <TextBlock Text="{Binding Cost, StringFormat={}{0:0} рублей}"/>
+                                    <TextBlock Text=" за "/>
+                                    <TextBlock Text="{Binding DurationInSeconds, StringFormat={}{0}}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

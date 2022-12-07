@@ -23,6 +23,7 @@ namespace Pigalev_School
         public ListServicePage()
         {
             InitializeComponent();
+            lvListService.ItemsSource = Base.BD.Service.ToList();
         }
     }
 }
