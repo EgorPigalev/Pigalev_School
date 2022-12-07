@@ -89,6 +89,7 @@
     <Compile Include="Manufacturer.cs">
       <DependentUpon>BaseData.tt</DependentUpon>
     </Compile>
+    <Compile Include="classes\PartialService.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>BaseData.tt</DependentUpon>
     </Compile>

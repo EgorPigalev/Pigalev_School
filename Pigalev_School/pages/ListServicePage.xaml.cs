@@ -24,6 +24,34 @@ namespace Pigalev_School
         {
             InitializeComponent();
             lvListService.ItemsSource = Base.BD.Service.ToList();
+            tbCurrentCount.Text = Convert.ToString(lvListService.Items.Count);
+            tbAllCount.Text = Convert.ToString(Base.BD.Service.ToList().Count);
+        }
+
+        private void tbDiscount_Loaded(object sender, RoutedEventArgs e)
+        {
+            TextBlock textBlock = (TextBlock)sender;
+            if(textBlock.Uid != null)
+            {
+                textBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                textBlock.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void tbOldPrice_Loaded(object sender, RoutedEventArgs e)
+        {
+            TextBlock textBlock = (TextBlock)sender;
+            if (textBlock.Uid != null)
+            {
+                textBlock.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                textBlock.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

@@ -4,6 +4,51 @@
              xmlns:local="clr-namespace:Pigalev_School"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ControlTemplate x:Key="CTButonMainPage" TargetType="Button">
+            <Border CornerRadius="20" BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}">
+                <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </ControlTemplate>
+        <Style x:Key="btnMain" TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Background" Value="#FF04A0FF"/> 
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseCaptured" Value="True">
+                    <Setter Property="Background" Value="#FF9A9999"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="tbHeader" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Style.Setters>
+        </Style>
+        <Style x:Key="tbSearchRight" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style.Setters>
+        </Style>
+        <Style x:Key="tbSearchLeft" TargetType="TextBox">
+            <Style.Setters>
+                <Setter Property="Width" Value="300"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="MaxLength" Value="100"/>
+            </Style.Setters>
+        </Style>
+        <Style x:Key="cbSearchAndSort" TargetType="ComboBox">
+            <Style.Setters>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Width" Value="300"/>
+            </Style.Setters>
+        </Style>
     </Application.Resources>
 </Application>
