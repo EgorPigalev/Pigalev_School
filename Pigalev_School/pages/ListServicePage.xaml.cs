@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace Pigalev_School
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ListServicePage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ListServicePage : Page
     {
-        public MainWindow()
+        public ListServicePage()
         {
             InitializeComponent();
-            Base.BD = new BaseData();
-            FrameClass.MainFrame = fMain;
-            FrameClass.MainFrame.Navigate(new ListServicePage());
         }
     }
 }
