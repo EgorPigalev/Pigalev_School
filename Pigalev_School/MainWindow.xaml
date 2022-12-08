@@ -4,17 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pigalev_School"
-        mc:Ignorable="d" Icon="resources\school_logo.ico" FontSize="20" FontFamily="Comic Sans MS"
+        mc:Ignorable="d" Icon="resources\school_logo.ico" FontFamily="Comic Sans MS"
         Title="Школа языков" Height="900" Width="1500" MinHeight="600" MinWidth="1200">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
                 <RowDefinition/>
-                <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <Frame Name="fMain" NavigationUIVisibility="Hidden" Grid.Row="0">
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20, 0, 0, 0">
+                    <Image Height="70" Width="70" Source="resources/school_logo.png" Margin="10"/>
+                    <TextBlock Text="Школа языков" FontSize="28" Style="{StaticResource ResourceKey=tbHeader}" VerticalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock x:Name="tbLoginAdmin" Grid.Row="2" Style="{StaticResource ResourceKey=tbLoginAdmin}" HorizontalAlignment="Right" Margin="0, 0, 20, 0" MouseDown="tbLoginAdmin_MouseDown"/>
+            </Grid>
+            <Frame Name="fMain" NavigationUIVisibility="Hidden" Grid.Row="1">
             </Frame>
-            <TextBlock x:Name="tbLoginAdmin" Text="Включить режим администратора" Grid.Row="1" Margin="20, 0, 0, 0" VerticalAlignment="Center" Cursor="Hand" MouseDown="tbLoginAdmin_MouseDown"/>
         </Grid>
     </Grid>
 </Window>

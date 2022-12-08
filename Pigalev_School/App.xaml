@@ -24,7 +24,7 @@
         </Style>
         <Style x:Key="tbHeader" TargetType="TextBlock">
             <Style.Setters>
-                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="FontSize" Value="32"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="FontWeight" Value="Bold"/>
             </Style.Setters>
@@ -49,6 +49,35 @@
                 <Setter Property="Margin" Value="5"/>
                 <Setter Property="Width" Value="300"/>
             </Style.Setters>
+        </Style>
+        <Style x:Key="tbLoginAdmin" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Text" Value="Включить режим администратора"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="20, 0, 0, 0"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#FF04A0FF"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="tbLoginAdminDelete" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="Text" Value="Активирован режим администратора"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="20, 0, 0, 0"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="TextBlock.Text" Value="Выключить режим администратора"/>
+                    <Setter Property="Foreground" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Application.Resources>
 </Application>

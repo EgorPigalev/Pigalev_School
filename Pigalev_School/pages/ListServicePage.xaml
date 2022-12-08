@@ -78,8 +78,8 @@
                                 </StackPanel>
                                 <TextBlock x:Name="tbDiscount" Uid="{Binding Discount}" Text="{Binding Discount, StringFormat={}*скидка {0}%}" Margin="10" Loaded="tbDiscount_Loaded"/>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button x:Name="btnChangeService" Content="Редактировать" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnChangeService_Loaded"/>
-                                    <Button x:Name="btnDeleteService" Content="Удалить" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnDeleteService_Loaded"/>
+                                    <Button x:Name="btnChangeService" Content="Редактировать" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnChangeService_Loaded"/>
+                                    <Button x:Name="btnDeleteService" Uid="{Binding ID}" Content="Удалить" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnDeleteService_Loaded" Click="btnDeleteService_Click"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>

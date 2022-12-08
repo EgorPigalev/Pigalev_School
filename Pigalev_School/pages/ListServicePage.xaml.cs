@@ -176,5 +176,42 @@ namespace Pigalev_School
                 buttonDeleteService.Visibility = Visibility.Collapsed;
             }
         }
+
+        private bool getProverkaInfoAboutService(int index)
+        {
+            foreach(ClientService clientService in Base.BD.ClientService.ToList())
+            {
+                if(clientService.ServiceID == index)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void btnDeleteService_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = (Button)sender;
+            int index = Convert.ToInt32(btn.Uid);
+            Service service = Base.BD.Service.FirstOrDefault(x => x.ID == index);
+            if (getProverkaInfoAboutService(index))
+            {
+                MessageBox.Show("Удаление услуги из базы данных запрещено, так как на неё есть информация о записях на услуги!!!");
+                return;
+            }
+            if (MessageBox.Show("Вы уверены что хотите удалить услугу: " + service.Title + "?", "Системное сообщение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                foreach (ServicePhoto servicePhoto in Base.BD.ServicePhoto.ToList())
+                {
+                    if (servicePhoto.ServiceID == index)
+                    {
+                        Base.BD.ServicePhoto.Remove(servicePhoto);
+                    }
+                }
+                Base.BD.Service.Remove(service);
+                Base.BD.SaveChanges();
+                FrameClass.MainFrame.Navigate(new ListServicePage(Admin));
+            }
+        }
     }
 }

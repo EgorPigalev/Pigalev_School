@@ -38,14 +38,19 @@ namespace Pigalev_School
                 loginAdminWindow.ShowDialog();
                 if (Admin == true)
                 {
-                    tbLoginAdmin.Text = "Активирован режим администратора";
+                    tbLoginAdmin.Style = (Style)tbLoginAdmin.FindResource("tbLoginAdminDelete");
                     FrameClass.MainFrame.Navigate(new ListServicePage(Admin));
                 }
             }
             else
             {
-                Admin = false;
-                MessageBox.Show("Режим администратора выключен");
+                if (MessageBox.Show("Вы уверены что хотите выйти из режима администратора?", "Системное сообщение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    Admin = false;
+                    tbLoginAdmin.Style = (Style)tbLoginAdmin.FindResource("tbLoginAdmin");
+                    MessageBox.Show("Режим администратора выключен");
+                    FrameClass.MainFrame.Navigate(new ListServicePage(Admin));
+                }
             }
         }
     }

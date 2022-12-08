@@ -31,10 +31,11 @@ namespace Pigalev_School
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if(tbKodAdmin.Text == "000")
+            if(tbKodAdmin.Text == "0000")
             {
                 MainWindow.Admin = true;
                 MessageBox.Show("Вы активировали режим администратора");
+                
                 this.Close();
             }
             else

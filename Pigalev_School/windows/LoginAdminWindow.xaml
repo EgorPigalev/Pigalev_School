@@ -8,16 +8,21 @@
         Title="Включение режима администратора" Height="400" Width="700">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
             <RowDefinition/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Введите код администратора" Margin="10"/>
-            <TextBox x:Name="tbKodAdmin" Margin="10" MaxLength="50"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0">
+            <Image Height="60" Width="60" Source="../resources/school_logo.png" Margin="10"/>
+            <TextBlock Text="Запуск режима администратора" FontSize="24" Style="{StaticResource ResourceKey=tbHeader}" VerticalAlignment="Center"/>
         </StackPanel>
-        <Grid Grid.Row="1">
-            <Button x:Name="btnBack" Content="Назад" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Left" Click="btnBack_Click"/>
-            <Button x:Name="btnSave" Content="Войти" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Right" Click="btnSave_Click" Cursor="Hand"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Введите код администратора" Margin="10" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tbKodAdmin" Width="400" Margin="10" MaxLength="50" TextAlignment="Center"/>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Button x:Name="btnBack" Content="Назад" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Left" Click="btnBack_Click"/>
+            <Button x:Name="btnSave" Content="Войти" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Right" Click="btnSave_Click"/>
         </Grid>
     </Grid>
 </Window>
