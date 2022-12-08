@@ -20,9 +20,11 @@ namespace Pigalev_School
     /// </summary>
     public partial class ListServicePage : Page
     {
-        public ListServicePage()
+        bool Admin;
+        public ListServicePage(bool Admin)
         {
             InitializeComponent();
+            this.Admin = Admin;
             lvListService.ItemsSource = Base.BD.Service.ToList();
             tbCurrentCount.Text = Convert.ToString(lvListService.Items.Count);
             tbAllCount.Text = Convert.ToString(Base.BD.Service.ToList().Count);
@@ -147,6 +149,32 @@ namespace Pigalev_School
         private void cbDiscount_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Filter();
+        }
+
+        private void btnChangeService_Loaded(object sender, RoutedEventArgs e)
+        {
+            Button btnChangeService = sender as Button;
+            if(Admin)
+            {
+                btnChangeService.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnChangeService.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void btnDeleteService_Loaded(object sender, RoutedEventArgs e)
+        {
+            Button buttonDeleteService = sender as Button;
+            if (Admin)
+            {
+                buttonDeleteService.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                buttonDeleteService.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

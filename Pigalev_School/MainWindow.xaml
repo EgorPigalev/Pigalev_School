@@ -4,11 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pigalev_School"
-        mc:Ignorable="d" Icon="resources\school_logo.ico"
+        mc:Ignorable="d" Icon="resources\school_logo.ico" FontSize="20" FontFamily="Comic Sans MS"
         Title="Школа языков" Height="900" Width="1500" MinHeight="600" MinWidth="1200">
     <Grid>
-        <Frame Name="fMain" NavigationUIVisibility="Hidden">
-
-        </Frame>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Frame Name="fMain" NavigationUIVisibility="Hidden" Grid.Row="0">
+            </Frame>
+            <TextBlock x:Name="tbLoginAdmin" Text="Включить режим администратора" Grid.Row="1" Margin="20, 0, 0, 0" VerticalAlignment="Center" Cursor="Hand" MouseDown="tbLoginAdmin_MouseDown"/>
+        </Grid>
     </Grid>
 </Window>

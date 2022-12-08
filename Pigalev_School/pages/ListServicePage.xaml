@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pigalev_School"
       mc:Ignorable="d" Background="White"
-      d:DesignHeight="800" d:DesignWidth="1400"
+      d:DesignHeight="750" d:DesignWidth="1400"
       Title="ListServicePage" FontSize="24" FontFamily="Comic Sans MS">
     <Page.Resources>
         <BitmapImage x:Key="defaultImage" UriSource="../resources/picture.png"/>
@@ -15,7 +15,7 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="110"/>
             <RowDefinition/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Список услуг" Style="{StaticResource ResourceKey=tbHeader}"/>
         <Grid Grid.Row="1">
@@ -78,8 +78,8 @@
                                 </StackPanel>
                                 <TextBlock x:Name="tbDiscount" Uid="{Binding Discount}" Text="{Binding Discount, StringFormat={}*скидка {0}%}" Margin="10" Loaded="tbDiscount_Loaded"/>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Редактировать" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}"/>
-                                    <Button Content="Удалить" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}"/>
+                                    <Button x:Name="btnChangeService" Content="Редактировать" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnChangeService_Loaded"/>
+                                    <Button x:Name="btnDeleteService" Content="Удалить" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnDeleteService_Loaded"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
@@ -88,7 +88,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <Grid Grid.Row="3">
-            <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="20, 10, 10, 10" HorizontalAlignment="Left" VerticalAlignment="Center" >
                 <TextBlock x:Name="tbCurrentCount"/>
                 <TextBlock Text=" из "/>
                 <TextBlock x:Name="tbAllCount"/>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="Pigalev_School.LoginAdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pigalev_School"
+        mc:Ignorable="d" Icon="..\resources\school_logo.ico" FontSize="24" FontFamily="Comic Sans MS"
+        Title="Включение режима администратора" Height="400" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Введите код администратора" Margin="10"/>
+            <TextBox x:Name="tbKodAdmin" Margin="10" MaxLength="50"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Button x:Name="btnBack" Content="Назад" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Left" Click="btnBack_Click"/>
+            <Button x:Name="btnSave" Content="Войти" Height="50" Width="200" Margin="10" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Right" Click="btnSave_Click" Cursor="Hand"/>
+        </Grid>
+    </Grid>
+</Window>

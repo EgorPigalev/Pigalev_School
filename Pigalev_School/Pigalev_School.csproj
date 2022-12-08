@@ -83,6 +83,9 @@
     <Compile Include="Gender.cs">
       <DependentUpon>BaseData.tt</DependentUpon>
     </Compile>
+    <Compile Include="windows\LoginAdminWindow.xaml.cs">
+      <DependentUpon>LoginAdminWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\ListServicePage.xaml.cs">
       <DependentUpon>ListServicePage.xaml</DependentUpon>
     </Compile>
@@ -108,6 +111,10 @@
     <Compile Include="Tag.cs">
       <DependentUpon>BaseData.tt</DependentUpon>
     </Compile>
+    <Page Include="windows\LoginAdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\ListServicePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

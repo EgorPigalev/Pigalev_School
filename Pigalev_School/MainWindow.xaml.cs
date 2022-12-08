@@ -20,12 +20,33 @@ namespace Pigalev_School
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static bool Admin;
         public MainWindow()
         {
             InitializeComponent();
             Base.BD = new BaseData();
             FrameClass.MainFrame = fMain;
-            FrameClass.MainFrame.Navigate(new ListServicePage());
+            Admin = false;
+            FrameClass.MainFrame.Navigate(new ListServicePage(Admin));
+        }
+
+        private void tbLoginAdmin_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(Admin == false)
+            {
+                LoginAdminWindow loginAdminWindow = new LoginAdminWindow();
+                loginAdminWindow.ShowDialog();
+                if (Admin == true)
+                {
+                    tbLoginAdmin.Text = "Активирован режим администратора";
+                    FrameClass.MainFrame.Navigate(new ListServicePage(Admin));
+                }
+            }
+            else
+            {
+                Admin = false;
+                MessageBox.Show("Режим администратора выключен");
+            }
         }
     }
 }
