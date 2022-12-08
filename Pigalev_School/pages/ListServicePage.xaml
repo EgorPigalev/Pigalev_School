@@ -4,9 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pigalev_School"
-      mc:Ignorable="d" Background="White"
-      d:DesignHeight="750" d:DesignWidth="1400"
-      Title="ListServicePage" FontSize="24" FontFamily="Comic Sans MS">
+      mc:Ignorable="d" Style="{StaticResource ResourceKey=pStyle}"
+      d:DesignHeight="850" d:DesignWidth="1500"
+      Title="ListServicePage">
     <Page.Resources>
         <BitmapImage x:Key="defaultImage" UriSource="../resources/picture.png"/>
     </Page.Resources>
@@ -80,6 +80,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <Button x:Name="btnChangeService" Content="Редактировать" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnChangeService_Loaded"/>
                                     <Button x:Name="btnDeleteService" Uid="{Binding ID}" Content="Удалить" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnDeleteService_Loaded" Click="btnDeleteService_Click"/>
+                                    <Button x:Name="btnEnterService" Uid="{Binding ID}" Content="Записаться на услугу" Height="50" Width="300" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnEnterService_Loaded" Click="btnEnterService_Click"/>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>

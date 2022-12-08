@@ -83,6 +83,10 @@
     <Compile Include="Gender.cs">
       <DependentUpon>BaseData.tt</DependentUpon>
     </Compile>
+    <Compile Include="pages\signingUpForServicePage.xaml.cs">
+      <DependentUpon>signingUpForServicePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="classes\PartialClient.cs" />
     <Compile Include="windows\LoginAdminWindow.xaml.cs">
       <DependentUpon>LoginAdminWindow.xaml</DependentUpon>
     </Compile>
@@ -111,6 +115,10 @@
     <Compile Include="Tag.cs">
       <DependentUpon>BaseData.tt</DependentUpon>
     </Compile>
+    <Page Include="pages\signingUpForServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="windows\LoginAdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:Pigalev_School"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style x:Key="pStyle" TargetType="Page">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Comic Sans MS"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="Background" Value="White"/>
+            </Style.Setters>
+        </Style>
         <ControlTemplate x:Key="CTButonMainPage" TargetType="Button">
             <Border CornerRadius="20" BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}">
                 <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>

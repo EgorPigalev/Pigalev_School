@@ -191,27 +191,55 @@ namespace Pigalev_School
 
         private void btnDeleteService_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Button btn = (Button)sender;
+                int index = Convert.ToInt32(btn.Uid);
+                Service service = Base.BD.Service.FirstOrDefault(x => x.ID == index);
+                if (getProverkaInfoAboutService(index))
+                {
+                    MessageBox.Show("Удаление услуги из базы данных запрещено, так как на неё есть информация о записях на услуги!!!");
+                    return;
+                }
+                if (MessageBox.Show("Вы уверены что хотите удалить услугу: " + service.Title + "?", "Системное сообщение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    foreach (ServicePhoto servicePhoto in Base.BD.ServicePhoto.ToList())
+                    {
+                        if (servicePhoto.ServiceID == index)
+                        {
+                            Base.BD.ServicePhoto.Remove(servicePhoto);
+                        }
+                    }
+                    Base.BD.Service.Remove(service);
+                    Base.BD.SaveChanges();
+                    FrameClass.MainFrame.Navigate(new ListServicePage(Admin));
+                }
+            }
+            catch
+            {
+                MessageBox.Show("При удаление услуги возникла ошибка");
+            }
+        }
+
+        private void btnEnterService_Loaded(object sender, RoutedEventArgs e)
+        {
+            Button btnEnterService = (Button)sender;
+            if (Admin)
+            {
+                btnEnterService.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnEnterService.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void btnEnterService_Click(object sender, RoutedEventArgs e)
+        {
             Button btn = (Button)sender;
             int index = Convert.ToInt32(btn.Uid);
             Service service = Base.BD.Service.FirstOrDefault(x => x.ID == index);
-            if (getProverkaInfoAboutService(index))
-            {
-                MessageBox.Show("Удаление услуги из базы данных запрещено, так как на неё есть информация о записях на услуги!!!");
-                return;
-            }
-            if (MessageBox.Show("Вы уверены что хотите удалить услугу: " + service.Title + "?", "Системное сообщение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
-            {
-                foreach (ServicePhoto servicePhoto in Base.BD.ServicePhoto.ToList())
-                {
-                    if (servicePhoto.ServiceID == index)
-                    {
-                        Base.BD.ServicePhoto.Remove(servicePhoto);
-                    }
-                }
-                Base.BD.Service.Remove(service);
-                Base.BD.SaveChanges();
-                FrameClass.MainFrame.Navigate(new ListServicePage(Admin));
-            }
+            FrameClass.MainFrame.Navigate(new signingUpForServicePage(service));
         }
     }
 }

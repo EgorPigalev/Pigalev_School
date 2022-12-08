@@ -21,7 +21,7 @@
             <TextBox x:Name="tbKodAdmin" Width="400" Margin="10" MaxLength="50" TextAlignment="Center"/>
         </StackPanel>
         <Grid Grid.Row="2">
-            <Button x:Name="btnBack" Content="Назад" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Left" Click="btnBack_Click"/>
+            <Button x:Name="btnBack" Content="Назад" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Left" Click="btnBack_Click" Cursor="Hand"/>
             <Button x:Name="btnSave" Content="Войти" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Right" Click="btnSave_Click"/>
         </Grid>
     </Grid>
