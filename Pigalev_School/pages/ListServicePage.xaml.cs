@@ -241,5 +241,22 @@ namespace Pigalev_School
             Service service = Base.BD.Service.FirstOrDefault(x => x.ID == index);
             FrameClass.MainFrame.Navigate(new signingUpForServicePage(service));
         }
+
+        private void btnUpcomingEntries_Click(object sender, RoutedEventArgs e)
+        {
+            FrameClass.MainFrame.Navigate(new UpcomingEntriesPage());
+        }
+
+        private void btnUpcomingEntries_Loaded(object sender, RoutedEventArgs e)
+        {
+            if(Admin)
+            {
+                btnUpcomingEntries.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnUpcomingEntries.Visibility= Visibility.Collapsed;
+            }
+        }
     }
 }

@@ -15,18 +15,18 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Добавление записи клиента на услугу" Style="{StaticResource ResourceKey=tbHeader}"/>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="tbNameService" Text="Название услуги" HorizontalAlignment="Center" Margin="10"/>
-            <TextBlock x:Name="tbDurationInMinute" Text="Длительность в минутах" HorizontalAlignment="Center" Margin="10"/>
+            <TextBlock x:Name="tbNameService" Text="Название услуги" Style="{StaticResource ResourceKey=tbAddRecord}"/>
+            <TextBlock x:Name="tbDurationInMinute" Text="Длительность в минутах" Style="{StaticResource ResourceKey=tbAddRecord}"/>
             <StackPanel Margin="10">
                 <TextBlock Text="Выбирите клиента" HorizontalAlignment="Center"/>
                 <ComboBox x:Name="cbClient" Width="600"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <StackPanel Margin="10">
+                <StackPanel Style="{StaticResource ResourceKey=spDateTime}">
                     <TextBlock Text="Дата" HorizontalAlignment="Center"/>
                     <DatePicker x:Name="dpData" Width="300" SelectedDateChanged="dpData_SelectedDateChanged"/>
                 </StackPanel>
-                <StackPanel Margin="10" VerticalAlignment="Center">
+                <StackPanel Style="{StaticResource ResourceKey=spDateTime}">
                     <TextBlock Text="Время" HorizontalAlignment="Center"/>
                     <TextBox x:Name="tbTime" Width="300" PreviewTextInput="tbTime_PreviewTextInput" MaxLength="5" TextAlignment="Center" SelectionChanged="tbTime_SelectionChanged"/>
                 </StackPanel>

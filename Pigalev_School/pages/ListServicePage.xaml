@@ -94,6 +94,7 @@
                 <TextBlock Text=" из "/>
                 <TextBlock x:Name="tbAllCount"/>
             </StackPanel>
+            <Button x:Name="btnUpcomingEntries" Content="Ближайшие записи" Height="50" Width="300" HorizontalAlignment="Right" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Margin="0, 0, 20, 0" Click="btnUpcomingEntries_Click" Loaded="btnUpcomingEntries_Loaded"/>
         </Grid>
     </Grid>
 </Page>

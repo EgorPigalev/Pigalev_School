@@ -86,5 +86,17 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="tbAddRecord" TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style.Setters>
+        </Style>
+        <Style x:Key="spDateTime" TargetType="StackPanel">
+            <Style.Setters>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style.Setters>
+        </Style>
     </Application.Resources>
 </Application>

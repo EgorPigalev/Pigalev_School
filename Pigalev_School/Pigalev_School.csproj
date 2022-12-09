@@ -87,6 +87,9 @@
       <DependentUpon>signingUpForServicePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="classes\PartialClient.cs" />
+    <Compile Include="pages\UpcomingEntriesPage.xaml.cs">
+      <DependentUpon>UpcomingEntriesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="windows\LoginAdminWindow.xaml.cs">
       <DependentUpon>LoginAdminWindow.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <DependentUpon>BaseData.tt</DependentUpon>
     </Compile>
     <Page Include="pages\signingUpForServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\UpcomingEntriesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
