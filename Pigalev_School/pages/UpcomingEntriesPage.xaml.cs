@@ -23,7 +23,12 @@ namespace Pigalev_School
         public UpcomingEntriesPage()
         {
             InitializeComponent();
-            lvListClientService.ItemsSource = Base.BD.ClientService.ToList();
+            List<ClientService> clientServices = Base.BD.ClientService.ToList();
+            clientServices = clientServices.Where(x => x.StartTime >= DateTime.Now).ToList(); // Фильтрация по дате начала
+            DateTime endDateTime = DateTime.Today.AddDays(2).AddTicks(-1); // Конец завтрашнего дня
+            clientServices = clientServices.Where(x => x.StartTime < endDateTime).ToList(); // Фильтрация по дате окончания
+            clientServices.Sort((x, y) => x.StartTime.CompareTo(y.StartTime));
+            lvListClientService.ItemsSource = clientServices;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

@@ -25,22 +25,35 @@
                     <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="#FF9A9999">
                         <Grid>
                             <StackPanel>
-                                <TextBlock Text="{Binding Service.Title, StringFormat=Услуга: {0}}" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="10"/>
-                                <TextBlock Text="{Binding Client.FIO, StringFormat=Клиент: {0}}" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="10"/>
+                                <TextBlock Text="{Binding Service.Title, StringFormat=Услуга: {0}}" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Center" Margin="10" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Client.FIO, StringFormat=Клиент: {0}}" HorizontalAlignment="Center" TextWrapping="Wrap"/>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <StackPanel HorizontalAlignment="Center" Grid.Column="0" Orientation="Horizontal">
-                                        <TextBlock Text="Email: "/>
-                                        <TextBlock Text="fdgddg@mail.ru"/>
+                                    <StackPanel Grid.Column="0">
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                            <TextBlock Text="Email: "/>
+                                            <TextBlock Text="{Binding Client.Email}"/>
+                                        </StackPanel>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                            <TextBlock Text="Телефон: "/>
+                                            <TextBlock Text="{Binding Client.Phone}"/>
+                                        </StackPanel>
                                     </StackPanel>
-                                    <StackPanel HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
-                                        <TextBlock Text="Телефон: "/>
-                                        <TextBlock Text="88005353535"/>
+                                    <StackPanel Grid.Column="1">
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                            <TextBlock Text="Дата: "/>
+                                            <TextBlock Text="{Binding StartTime, StringFormat='dd MMMM yyyy'}"/>
+                                        </StackPanel>
+                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                            <TextBlock Text="Время: "/>
+                                            <TextBlock Text="{Binding StartTime, StringFormat='hh:mm'}"/>
+                                        </StackPanel>
                                     </StackPanel>
                                 </Grid>
+                                <TextBlock Text="{Binding RemainingTime, StringFormat='Оставшееся время до приёма: {0}'}" HorizontalAlignment="Center"/>
                             </StackPanel>
                         </Grid>
                     </Border>
