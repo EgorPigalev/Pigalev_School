@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pigalev_School"
       mc:Ignorable="d" 
-      d:DesignHeight="850" d:DesignWidth="1500"
+      d:DesignHeight="850" d:DesignWidth="1500" Loaded="Page_Loaded"
       Title="Ближайшие записи" Style="{StaticResource ResourceKey=pStyle}">
     <Grid>
         <Grid.RowDefinitions>
@@ -33,27 +33,30 @@
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Grid.Column="0">
-                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                        <StackPanel Style="{StaticResource ResourceKey=spUpcomingEntries}">
                                             <TextBlock Text="Email: "/>
                                             <TextBlock Text="{Binding Client.Email}"/>
                                         </StackPanel>
-                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                        <StackPanel Style="{StaticResource ResourceKey=spUpcomingEntries}">
                                             <TextBlock Text="Телефон: "/>
                                             <TextBlock Text="{Binding Client.Phone}"/>
                                         </StackPanel>
                                     </StackPanel>
                                     <StackPanel Grid.Column="1">
-                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                        <StackPanel Style="{StaticResource ResourceKey=spUpcomingEntries}">
                                             <TextBlock Text="Дата: "/>
-                                            <TextBlock Text="{Binding StartTime, StringFormat='dd MMMM yyyy'}"/>
+                                            <TextBlock Text="{Binding StartTime, StringFormat='dd.MM.yyyy'}"/>
                                         </StackPanel>
-                                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                        <StackPanel Style="{StaticResource ResourceKey=spUpcomingEntries}">
                                             <TextBlock Text="Время: "/>
-                                            <TextBlock Text="{Binding StartTime, StringFormat='hh:mm'}"/>
+                                            <TextBlock Text="{Binding StartTime, StringFormat='HH:mm'}"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </Grid>
-                                <TextBlock Text="{Binding RemainingTime, StringFormat='Оставшееся время до приёма: {0}'}" HorizontalAlignment="Center"/>
+                                <StackPanel Style="{StaticResource ResourceKey=spUpcomingEntries}">
+                                    <TextBlock Text="Оставшееся время до приёма: "/>
+                                    <TextBlock Text="{Binding RemainingTime}" Foreground="{Binding UpcomingEntriesColor}"/>
+                                </StackPanel>
                             </StackPanel>
                         </Grid>
                     </Border>

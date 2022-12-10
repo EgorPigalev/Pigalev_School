@@ -90,7 +90,7 @@
     <Compile Include="pages\UpcomingEntriesPage.xaml.cs">
       <DependentUpon>UpcomingEntriesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PartialClientService.cs" />
+    <Compile Include="classes\PartialClientService.cs" />
     <Compile Include="windows\LoginAdminWindow.xaml.cs">
       <DependentUpon>LoginAdminWindow.xaml</DependentUpon>
     </Compile>

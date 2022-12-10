@@ -10,7 +10,7 @@ namespace Pigalev_School
 {
     public partial class Service
     {
-        public float DurationInMinute
+        public float DurationInMinute // Продолжительность в минутах
         {
             get
             {
@@ -18,7 +18,7 @@ namespace Pigalev_School
                 return time;
             }
         }
-        public double CurrentPrice
+        public double CurrentPrice // Текущая цена
         {
             get
             {
@@ -33,7 +33,7 @@ namespace Pigalev_School
                 }
             }
         }
-        public SolidColorBrush TimeColor
+        public SolidColorBrush DiscountColor // Цвет услуг со скидкой
         {
             get
             {

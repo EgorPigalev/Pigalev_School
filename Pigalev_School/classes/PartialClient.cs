@@ -8,7 +8,7 @@ namespace Pigalev_School
 {
     public partial class Client
     {
-        public string FIO
+        public string FIO // ФИО Клиента
         {
             get
             {

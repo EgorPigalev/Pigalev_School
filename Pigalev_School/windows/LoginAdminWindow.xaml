@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pigalev_School"
         mc:Ignorable="d" Icon="..\resources\school_logo.ico" FontSize="24" FontFamily="Comic Sans MS"
-        Title="Включение режима администратора" Height="400" Width="700">
+        Title="Включение режима администратора" Height="400" Width="700" MinHeight="350" MinWidth="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>

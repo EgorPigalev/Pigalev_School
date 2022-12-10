@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Pigalev_School
 {
@@ -23,6 +24,10 @@ namespace Pigalev_School
         public UpcomingEntriesPage()
         {
             InitializeComponent();
+            loadedData();
+        }
+        private void loadedData()
+        {
             List<ClientService> clientServices = Base.BD.ClientService.ToList();
             clientServices = clientServices.Where(x => x.StartTime >= DateTime.Now).ToList(); // Фильтрация по дате начала
             DateTime endDateTime = DateTime.Today.AddDays(2).AddTicks(-1); // Конец завтрашнего дня
@@ -31,9 +36,22 @@ namespace Pigalev_School
             lvListClientService.ItemsSource = clientServices;
         }
 
+        private void dtTicker(object sender, EventArgs e)
+        {
+            loadedData();
+        }
+
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             FrameClass.MainFrame.Navigate(new ListServicePage(true));
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Interval = TimeSpan.FromSeconds(30);
+            dispatcherTimer.Tick += dtTicker;
+            dispatcherTimer.Start();
         }
     }
 }

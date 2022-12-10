@@ -48,9 +48,9 @@ namespace Pigalev_School
 
         private void tbTime_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            ShowDateAndTime();
+            showDateAndTime();
         }
-        private void ShowDateAndTime()
+        private void showDateAndTime() // Метод который выводит время окончания записи клиента
         {
             if(getProverkaData(dpData.Text))
             {
@@ -75,7 +75,7 @@ namespace Pigalev_School
                 spDateAndTime.Visibility = Visibility.Collapsed;
             }
         }
-        private bool getProverkaData(string date)
+        private bool getProverkaData(string date) // Проверка, что дата корректна
         {
             try
             {
@@ -87,7 +87,7 @@ namespace Pigalev_School
                 return false;
             }
         }
-        private bool getProverkaTime(string time)
+        private bool getProverkaTime(string time) // Проверка на корректность время записи
         {
             Regex regex = new Regex("^(([0,1][0-9])|(2[0-3])):[0-5][0-9]$");
             bool a = regex.IsMatch(time);
@@ -136,7 +136,7 @@ namespace Pigalev_School
 
         private void dpData_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            ShowDateAndTime();
+            showDateAndTime();
         }
     }
 }

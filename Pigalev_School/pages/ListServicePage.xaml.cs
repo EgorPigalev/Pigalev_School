@@ -83,7 +83,7 @@ namespace Pigalev_School
             int index = cbDiscount.SelectedIndex;
             if (index != 0)
             {
-                switch (cbDiscount.SelectedIndex)
+                switch (cbDiscount.SelectedIndex) // Фильтрация по скидке
                 {
                     case 1:
                         {
@@ -124,7 +124,7 @@ namespace Pigalev_School
             {
                 services = GetServiceDescription(services, tbSearchDescription.Text);
             }
-            switch (cbSorting.SelectedIndex)
+            switch (cbSorting.SelectedIndex) // Сортировка
             {
                 case 1:
                     {
@@ -177,7 +177,7 @@ namespace Pigalev_School
             }
         }
 
-        private bool getProverkaInfoAboutService(int index)
+        private bool getProverkaInfoAboutService(int index) // Проверка наличия записей на услугу клиентом
         {
             foreach(ClientService clientService in Base.BD.ClientService.ToList())
             {
@@ -203,7 +203,7 @@ namespace Pigalev_School
                 }
                 if (MessageBox.Show("Вы уверены что хотите удалить услугу: " + service.Title + "?", "Системное сообщение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
-                    foreach (ServicePhoto servicePhoto in Base.BD.ServicePhoto.ToList())
+                    foreach (ServicePhoto servicePhoto in Base.BD.ServicePhoto.ToList()) // Удаление дополнительных фото
                     {
                         if (servicePhoto.ServiceID == index)
                         {

@@ -62,7 +62,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="#FF9A9999">
-                        <Grid Background="{Binding TimeColor}">
+                        <Grid Background="{Binding DiscountColor}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="300"/>
                                 <ColumnDefinition Width="3*"/>
