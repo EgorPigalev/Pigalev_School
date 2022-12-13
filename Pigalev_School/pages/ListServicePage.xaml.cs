@@ -278,7 +278,10 @@ namespace Pigalev_School
 
         private void btnChangeService_Click(object sender, RoutedEventArgs e)
         {
-
+            Button btn = (Button)sender;
+            int index = Convert.ToInt32(btn.Uid);
+            Service service = Base.BD.Service.FirstOrDefault(x => x.ID == index);
+            FrameClass.MainFrame.Navigate(new AddService(service));
         }
     }
 }

@@ -104,5 +104,17 @@
                 <Setter Property="Orientation" Value="Horizontal"/>
             </Style.Setters>
         </Style>
+        <Style x:Key="spAddAndUpdService" TargetType="StackPanel">
+            <Style.Setters>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Orientation" Value="Vertical"/>
+            </Style.Setters>
+        </Style>
+        <Style x:Key="tbAddAndUpdServiceNumber" TargetType="TextBox">
+            <Style.Setters>
+                <Setter Property="Width" Value="200"/>
+                <Setter Property="MaxLength" Value="20"/>
+            </Style.Setters>
+        </Style>
     </Application.Resources>
 </Application>

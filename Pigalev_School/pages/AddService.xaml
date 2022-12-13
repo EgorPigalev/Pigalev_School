@@ -15,23 +15,23 @@
         </Grid.RowDefinitions>
         <TextBlock x:Name="tbHeader" Text="Добавление услуги" Style="{StaticResource ResourceKey=tbHeader}"/>
         <StackPanel Grid.Row="1">
-            <TextBlock Text="Идентификатор: " HorizontalAlignment="Center" Margin="0, 0, 415, 0" Visibility="Hidden"/>
+            <TextBlock x:Name="tbIndex" Text="Идентификатор: " HorizontalAlignment="Center" Margin="0, 0, 480, 0" Visibility="Hidden"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="Наименование: "/>
-                <TextBox x:Name="tbName" Width="400" MaxLength="100"/>
+                <TextBox x:Name="tbName" Width="500" MaxLength="100"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel Style="{StaticResource ResourceKey=spAddAndUpdService}">
                     <TextBlock Text="Стоимость" HorizontalAlignment="Center"/>
-                    <TextBox x:Name="tbCost" Width="200" PreviewTextInput="tbCost_PreviewTextInput" MaxLength="20"/>
+                    <TextBox x:Name="tbCost" PreviewTextInput="tbCost_PreviewTextInput" Style="{StaticResource ResourceKey=tbAddAndUpdServiceNumber}"/>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel Style="{StaticResource ResourceKey=spAddAndUpdService}">
                     <TextBlock Text="Длительность (сек.)" HorizontalAlignment="Center"/>
-                    <TextBox x:Name="tbDurationInSeconds" Width="200" PreviewTextInput="tbCost_PreviewTextInput" MaxLength="20"/>
+                    <TextBox x:Name="tbDurationInSeconds" PreviewTextInput="tbDurationInSeconds_PreviewTextInput" Style="{StaticResource ResourceKey=tbAddAndUpdServiceNumber}"/>
                 </StackPanel>
-                <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel Style="{StaticResource ResourceKey=spAddAndUpdService}">
                     <TextBlock Text="Скидка (%)" HorizontalAlignment="Center"/>
-                    <TextBox x:Name="tbDiscount" Width="200" PreviewTextInput="tbCost_PreviewTextInput" MaxLength="20"/>
+                    <TextBox x:Name="tbDiscount" PreviewTextInput="tbCost_PreviewTextInput" Style="{StaticResource ResourceKey=tbAddAndUpdServiceNumber}"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
@@ -39,8 +39,11 @@
                 <TextBox  Name="tbDescription" TextWrapping="Wrap" AcceptsReturn="True" Height="150" Width="650"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                <Image x:Name="imMainImagePath" Height="200" Width="300" Source="..\resources\picture.png"/>
-                <Button x:Name="btnAddImage" Content="Добавить картинку" Height="50" Width="300" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Center"/>
+                <Image x:Name="imMainImagePath" Height="200" Width="300"/>
+                <StackPanel VerticalAlignment="Center">
+                    <Button x:Name="btnAddImage" Content="Добавить картинку" Height="50" Width="300" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Center" Click="btnAddImage_Click"/>
+                    <Button x:Name="btnDeleteImage" Content="Удалить картинку" Height="50" Width="300" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" HorizontalAlignment="Center" Click="btnDeleteImage_Click" Visibility="Hidden"/>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
         <Grid Grid.Row="3">
