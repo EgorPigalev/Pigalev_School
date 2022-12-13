@@ -78,7 +78,7 @@
                                 </StackPanel>
                                 <TextBlock x:Name="tbDiscount" Uid="{Binding Discount}" Text="{Binding Discount, StringFormat={}*скидка {0}%}" Margin="10" Loaded="tbDiscount_Loaded"/>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button x:Name="btnChangeService" Content="Редактировать" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnChangeService_Loaded"/>
+                                    <Button x:Name="btnChangeService" Uid="{Binding ID}" Content="Редактировать" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnChangeService_Loaded" Click="btnChangeService_Click"/>
                                     <Button x:Name="btnDeleteService" Uid="{Binding ID}" Content="Удалить" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnDeleteService_Loaded" Click="btnDeleteService_Click"/>
                                     <Button x:Name="btnEnterService" Uid="{Binding ID}" Content="Записаться на услугу" Height="50" Width="300" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Loaded="btnEnterService_Loaded" Click="btnEnterService_Click"/>
                                 </StackPanel>
@@ -94,7 +94,10 @@
                 <TextBlock Text=" из "/>
                 <TextBlock x:Name="tbAllCount"/>
             </StackPanel>
-            <Button x:Name="btnUpcomingEntries" Content="Ближайшие записи" Height="50" Width="300" HorizontalAlignment="Right" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Margin="0, 0, 20, 0" Click="btnUpcomingEntries_Click" Loaded="btnUpcomingEntries_Loaded"/>
+            <Grid Grid.Row="4">
+                <Button x:Name="btnAdd" Content="Добавить новую услугу" Height="50" Width="300" HorizontalAlignment="Center" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Margin="0" Click="btnAdd_Click" Loaded="btnUpcoming_Loaded"/>
+                <Button x:Name="btnUpcomingEntries" Content="Ближайшие записи" Height="50" Width="300" HorizontalAlignment="Right" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Margin="0, 0, 20, 0" Click="btnUpcomingEntries_Click" Loaded="btnUpcomingEntries_Loaded"/>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

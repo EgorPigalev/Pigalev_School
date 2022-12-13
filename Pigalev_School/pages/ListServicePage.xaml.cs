@@ -258,5 +258,27 @@ namespace Pigalev_School
                 btnUpcomingEntries.Visibility= Visibility.Collapsed;
             }
         }
+
+        private void btnUpcoming_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Admin)
+            {
+                btnAdd.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnAdd.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            FrameClass.MainFrame.Navigate(new AddService());
+        }
+
+        private void btnChangeService_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
