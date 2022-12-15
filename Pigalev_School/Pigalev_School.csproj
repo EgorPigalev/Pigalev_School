@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="pages\ChangePicturePage.xaml.cs">
+      <DependentUpon>ChangePicturePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="pages\AddService.xaml.cs">
       <DependentUpon>AddService.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
     <Compile Include="Tag.cs">
       <DependentUpon>BaseData.tt</DependentUpon>
     </Compile>
+    <Page Include="pages\ChangePicturePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="pages\AddService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
