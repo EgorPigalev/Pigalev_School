@@ -8,6 +8,9 @@ using System.Windows.Media;
 
 namespace Pigalev_School
 {
+    /// <summary>
+    /// Частичный класс для таблицы ClientService
+    /// </summary>
     public partial class ClientService
     {
         public string RemainingTime // Оставшееся время до записи

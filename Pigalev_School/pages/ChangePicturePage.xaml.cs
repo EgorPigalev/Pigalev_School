@@ -48,7 +48,7 @@ namespace Pigalev_School
                 if(path != null)
                 {
                     string newFilePath = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\image\\" + System.IO.Path.GetFileName(path); // Путь куда копировать файл
-                    if(!File.Exists(newFilePath))
+                    if(!File.Exists(newFilePath)) // Проверка наличия картинки в папке
                     {
                         File.Copy(path, newFilePath);
                     }

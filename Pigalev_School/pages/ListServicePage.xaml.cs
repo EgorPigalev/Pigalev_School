@@ -20,7 +20,7 @@ namespace Pigalev_School
     /// </summary>
     public partial class ListServicePage : Page
     {
-        bool Admin;
+        bool Admin; // Поле для фиксации админа
         public ListServicePage(bool Admin)
         {
             InitializeComponent();
@@ -61,7 +61,7 @@ namespace Pigalev_School
         {
             Filter();
         }
-        private List<Service> GetServiceDescription(List<Service> services, string Description) // метод для нахождения туров с таким описанием
+        private List<Service> GetServiceDescription(List<Service> services, string Description) // Метод для нахождения туров с заданным описанием
         {
             List<Service> servicesDiscription = new List<Service>();
             foreach (Service service in services)

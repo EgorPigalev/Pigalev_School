@@ -8,6 +8,9 @@ using System.Windows.Media;
 
 namespace Pigalev_School
 {
+    /// <summary>
+    /// Частичный класс для таблицы Service
+    /// </summary>
     public partial class Service
     {
         public float DurationInMinute // Продолжительность в минутах

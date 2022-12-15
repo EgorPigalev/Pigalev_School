@@ -24,17 +24,17 @@ namespace Pigalev_School
     /// </summary>
     public partial class AddService : Page
     {
-        Service service;
-        bool flagUpdate = false;
-        string path;
-        public AddService()
+        Service service; // Объект модели для добавления или редактирования БД
+        bool flagUpdate = false; // Открыто для изменения или нет
+        string path; // Путь к картинке
+        public AddService() // При добавление
         {
             InitializeComponent();
             path = null;
             imMainImagePath.Source = new BitmapImage(new Uri("..\\resources\\picture.png", UriKind.Relative));
         }
 
-        public AddService(Service service)
+        public AddService(Service service) // При изменение
         {
             InitializeComponent();
             this.service = service;
@@ -109,7 +109,6 @@ namespace Pigalev_School
                         return;
                     }
                 }
-                
                 if (flagUpdate == false)
                 {
                     service = new Service();

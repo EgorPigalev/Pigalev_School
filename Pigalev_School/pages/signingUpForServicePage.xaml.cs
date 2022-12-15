@@ -107,8 +107,8 @@ namespace Pigalev_School
                 {
                     try
                     {
-                        DateTime dateTime = dpData.SelectedDate.Value;
-                        dateTime = dateTime.Add(new TimeSpan(Convert.ToInt32(tbTime.Text.Substring(0, 2)), Convert.ToInt32(tbTime.Text.Substring(3, 2)), 0));
+                        DateTime dateTime = dpData.SelectedDate.Value; // Дата без времени
+                        dateTime = dateTime.Add(new TimeSpan(Convert.ToInt32(tbTime.Text.Substring(0, 2)), Convert.ToInt32(tbTime.Text.Substring(3, 2)), 0)); // Дата с временем
                         ClientService clientService = new ClientService();
                         clientService.ClientID = Convert.ToInt32(cbClient.SelectedValue);
                         clientService.ServiceID = service.ID;

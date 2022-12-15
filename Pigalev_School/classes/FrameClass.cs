@@ -7,6 +7,9 @@ using System.Windows.Controls;
 
 namespace Pigalev_School
 {
+    /// <summary>
+    /// Класс с главным фреймом
+    /// </summary>
     internal class FrameClass
     {
         public static Frame MainFrame;
