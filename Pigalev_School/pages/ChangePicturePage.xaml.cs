@@ -47,9 +47,21 @@ namespace Pigalev_School
                 path = OFD.FileName;
                 if(path != null)
                 {
-                    //File.Copy(path, "..\\image\\");
-                    //string[] arrayPath = path.Split('\\');
-                    //path = "\\" + arrayPath[arrayPath.Length - 2] + "\\" + arrayPath[arrayPath.Length - 1];
+                    string newFilePath = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\image\\" + System.IO.Path.GetFileName(path); // Путь куда копировать файл
+                    if(!File.Exists(newFilePath))
+                    {
+                        File.Copy(path, newFilePath);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Такая картинка уже есть! Добавлено старое фото");
+                    }
+                    ServicePhoto servicePhoto = new ServicePhoto();
+                    servicePhoto.ServiceID = service.ID;
+                    servicePhoto.PhotoPath = newFilePath;
+                    Base.BD.ServicePhoto.Add(servicePhoto);
+                    Base.BD.SaveChanges();
+                    FrameClass.MainFrame.Navigate(new ChangePicturePage(service));
                 }
             }
             catch
@@ -65,7 +77,7 @@ namespace Pigalev_School
                 Button btn = (Button)sender;
                 int index = Convert.ToInt32(btn.Uid);
                 ServicePhoto servicePhoto = Base.BD.ServicePhoto.FirstOrDefault(x => x.ID == index);
-                if (MessageBox.Show("Вы уверены, что хотите картинку?", "Системное сообщение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Вы уверены, что хотите удалить картинку?", "Системное сообщение", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
                     Base.BD.ServicePhoto.Remove(servicePhoto);
                     Base.BD.SaveChanges();

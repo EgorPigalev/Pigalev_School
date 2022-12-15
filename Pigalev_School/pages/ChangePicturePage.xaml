@@ -17,19 +17,17 @@
         <TextBlock Text="Дополнительные изображения" Style="{StaticResource ResourceKey=tbHeader}" Grid.Row="0"/>
         <TextBlock x:Name="tbNameService" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <ListView x:Name="lvListImages" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="2">
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                </Style>
-            </ListView.ItemContainerStyle>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Center"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border Padding="10" CornerRadius="20" BorderThickness="1" BorderBrush="#FF9A9999">
-                        <StackPanel>
-                            <Image Width="300" Source="{Binding PhotoPath}"/>
-                            <Button x:Name="btnDeleteService" Uid="{Binding ID}" Content="Удалить картинку" Height="50" Width="300" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Click="btnDeleteService_Click"/>
-                        </StackPanel>
-                    </Border>
+                    <StackPanel>
+                        <Image Width="300" Height="300" Source="{Binding PhotoPath}"/>
+                        <Button x:Name="btnDeleteService" Uid="{Binding ID}" Content="Удалить картинку" Height="50" Width="300" Template="{StaticResource ResourceKey=CTButonMainPage}" Style="{StaticResource ResourceKey=btnMain}" Click="btnDeleteService_Click"/>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
